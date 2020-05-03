@@ -52,3 +52,9 @@
 .app-list-item.important .btn-star {
     color: #aeaeae;
 }
+
+.pub-date {
+  color: #aeaeae;
+  font-size: 14px;
+  padding-right: 10px;
+}

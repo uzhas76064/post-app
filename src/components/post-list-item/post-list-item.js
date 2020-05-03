@@ -30,7 +30,7 @@ const PostListItem =() => {
                 Hello world!
             </span>
             <div className="d-flex justify-content-center align-items-center">
-                <span>{postItemDate}</span>
+                <span className="pub-date">{postItemDate}</span>
                 <button className="btn-star btn-sm">
                     <i className="fa fa-star"></i>
                 </button>
