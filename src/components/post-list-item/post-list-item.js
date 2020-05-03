@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './post-list-item.css';
+
 const PostListItem =() => {
     return (
         <li className="app-list-item d-flex justify-content-between">
@@ -16,7 +18,7 @@ const PostListItem =() => {
                 <i className="fa fa-heart"></i>
             </div>
         </li>
-    )
+    );
 }
 
 export default PostListItem;
