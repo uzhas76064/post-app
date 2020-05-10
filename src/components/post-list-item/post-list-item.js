@@ -69,6 +69,7 @@ export default class PostListItem extends React.Component {
                 <button className="btn-trash btn-sm">
                     <i className="fa fa-trash-o"></i>
                 </button>
+                <button className="btn btn-primary">Редактировать</button>
                 <i className="fa fa-heart"></i>
             </div>
         </div>
