@@ -5,6 +5,7 @@ import SearchPanel from '../search-panel';
 import PostStatusFilter from '../post-status-filter';
 import PostList from '../post-list';
 import PostAddForm from '../post-add-form';
+import EditForm from '../edit-form';
 
 import './app.css';
 
@@ -62,6 +63,7 @@ export default class App extends React.Component {
                 </div>
                 <PostList onDelete={this.deleteItem} posts={this.state.data}/>
                 <PostAddForm onAdd={this.addItem}/>
+                <EditForm />
             </div>
         );
     }

@@ -49,6 +49,11 @@
   color: #FFD700;
 }
 
+.app-list-item button {
+  width: auto;
+  height: auto;
+}
+
 .app-list-item.important .btn-star {
     color: #aeaeae;
 }
