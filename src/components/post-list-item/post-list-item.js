@@ -27,7 +27,8 @@ export default class PostListItem extends React.Component {
         super(props);
         this.state = {
             important: false,
-            like: false
+            like: false,
+            isEditable: false
         }
     }
 
@@ -43,10 +44,18 @@ export default class PostListItem extends React.Component {
         }))
     }
 
+    onEditPost = () => {
+        this.setState(({ isEditable }) => ({
+            isEditable: !isEditable
+        }))
+    }
+
     render() {
         const { label } = this.props;
-        const { important, like } = this.state;
+        const { important, like, isEditable } = this.state;
+
         let classNames = 'app-list-item d-flex justify-content-between';
+        let editPost = document.querySelector('.edit-post');
 
         if(important) {
             classNames += ' important';
@@ -54,6 +63,10 @@ export default class PostListItem extends React.Component {
 
         if(like) {
             classNames += ' like';
+        }
+
+        if(isEditable) {
+            editPost.classList.toggle('form-visible');
         }
 
         return (
@@ -69,7 +82,7 @@ export default class PostListItem extends React.Component {
                 <button className="btn-trash btn-sm">
                     <i className="fa fa-trash-o"></i>
                 </button>
-                <button className="btn btn-primary">Редактировать</button>
+                <button className="btn btn-primary" onClick={this.onEditPost}>Редактировать</button>
                 <i className="fa fa-heart"></i>
             </div>
         </div>

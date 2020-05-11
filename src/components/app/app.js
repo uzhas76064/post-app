@@ -5,6 +5,7 @@ import SearchPanel from '../search-panel';
 import PostStatusFilter from '../post-status-filter';
 import PostList from '../post-list';
 import PostAddForm from '../post-add-form';
+import EditForm from '../edit-form';
 
 import './app.css';
 
@@ -25,6 +26,7 @@ const App = () => {
             </div>
             <PostList posts={data}/>
             <PostAddForm/>
+            <EditForm />
         </div>
     );
 }

@@ -1,0 +1,12 @@
+.edit-post {
+    margin-top: 1rem;
+    display: none;
+}
+
+.form-visible {
+    display: block;
+}
+
+.btn-edit {
+    margin-top: 1rem;
+}
