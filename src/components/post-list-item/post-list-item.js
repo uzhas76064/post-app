@@ -23,36 +23,24 @@ dateConfig.date = currentDate.getDate().toString();
 let postItemDate = new Date(dateConfig.year, dateConfig.month, dateConfig.date, 0, 0, 0, 0).toLocaleString('ru', dateOptions);
 
 export default class PostListItem extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            important: false,
-            like: false,
-            isEditable: false
-        }
+    state = {
+        important: false,
+        like: false,
+        isEditable: false
     }
 
-    onImportant = () => {
-        this.setState(({ important }) => ({
-            important: !important
-        }))
-    }
+    onEditPost = (event) => {
+        let target = event.target;
 
-    onLike = () => {
-        this.setState(({ like }) => ({
-            like: !like
-        }))
-    }
-
-    onEditPost = () => {
+        console.log(target.closest('.app-list-item'));
+        
         this.setState(({ isEditable }) => ({
             isEditable: !isEditable
         }))
     }
 
     render() {
-        const { label, onDelete } = this.props;
-        const { important, like, isEditable } = this.state;
+        const { label, onDelete, onToggleImportant, onToggleLiked, important, like, isEditable } = this.props;
 
         let classNames = 'app-list-item d-flex justify-content-between';
         let editPost = document.querySelector('.edit-post');
@@ -71,12 +59,12 @@ export default class PostListItem extends React.Component {
 
         return (
         <div className={classNames}>
-            <span onClick={this.onLike} className="app-list-item-label">
+            <span onClick={onToggleLiked} className="app-list-item-label">
                 {label}
             </span>
             <div className="d-flex justify-content-center align-items-center">
                 <span className="pub-date">{postItemDate}</span>
-                <button onClick={this.onImportant} className="btn-star btn-sm">
+                <button onClick={onToggleImportant} className="btn-star btn-sm">
                     <i className="fa fa-star"></i>
                 </button>
                 <button onClick={onDelete} className="btn-trash btn-sm">
